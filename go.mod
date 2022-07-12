@@ -4,6 +4,10 @@ go 1.17
 
 replace github.com/fluxcd/source-controller/api => ./api
 
+// Use temporary fork that allows for the use of threading to be disabled
+// when using git2go.
+replace github.com/libgit2/git2go/v33 => github.com/pjbgf/git2go/v33 v33.0.1-nothread
+
 // this is needed to fix an issue in the helm sdk, where all credentials are cached
 // indefinitely when using the oci client. https://github.com/helm/helm/pull/11086
 // TODO: remove this once helm.sh/helm/v3@3.9.1 is released.
